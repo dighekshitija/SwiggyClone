@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Font awesome  -->
+  <link rel="stylesheet" href="./css/fontawesome.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Owl carousel -->
+  <link rel="stylesheet" href="./css/owl.carousel.min.css">
+  <!-- Main css -->
+  <link rel="stylesheet" href="./css/style.css">
+   <!-- Responsive css -->
+   <link rel="stylesheet" href="./css/responsive.css">
+  <!-- Default skin -->
+  <link rel="stylesheet" href="./css/skins/crimson.css">
+
+    <link rel="stylesheet" href="cart.css">
+    <title>Shopping Cart</title>
+</head>
+<style>
+   
+
+
+body {
+  background-color:whitesmoke;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header {
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.navbar{
+    background-color: rgb(248, 134, 93);
+}
+
+.nav1{
+
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+#checkout-btn:hover {
+  background-color:blue /* your desired hover color */;
+}
+
+
+.nav1:hover{
+    color: #ffffff;
+}
+
+.cart, .products {
+    float: left;
+    width: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cart {
+    background-color: #f5f5f5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+.li{
+    color: #ffffff;
+}
+.li:hover{
+    color: #c7c4c4;
+}
+
+
+
+button {
+    background-color:orangered;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+@media screen and (max-width: 768px ) {
+    #cart{
+        margin:30px;
+    }
+    .cart, .products {
+        display:contents;
+        margin: 100px;
+        padding: auto;
+        width: 50%;
+    }
+    li{
+        display: flex;
+    }
+}
+.products{
+        font-family:"poppins,sans-serif";
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        margin: 1px 0;
+        margin-top: 1px;
+        font-size: 18px;
+    }
+    .products img{
+        width: 300px;
+        
+        margin: 10px ;
+        border-radius: px;
+        overflow: hidden;
+    }
+    .footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333; /* Dark background color */
+            color: #fff; /* White text color */
+            padding: 20px 0; /* Add padding */
+            font-family: Arial, sans-serif; /* Specify font */
+        }
+
+        .list {
+            flex: 1; /* Equal width for each list */
+            text-align: center; /* Center align content */
+        }
+
+        .list p {
+            margin: 5px 0; /* Add margin to paragraphs */
+        }
+
+        .list p:first-child {
+            font-weight: bold; /* Make the first paragraph bold */
+        }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+              <!-- Brand -->
+              <a class="navbar-brand" href="#">
+                <img src=""  style="width: 100px;">
+                <svg class="_8pSp-" viewBox="0 0 559 825" height="90" width="50" fill="#fc8019">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M542.92 388.542C546.805 366.526 542.355 349.598 530.881 340.76C513.621 327.466 487.698 320.236 425.954 320.236C380.271 320.236 331.225 320.286 310.268 320.275C308.322 319.894 301.285 317.604 301.02 309.112L300.734 174.289C300.727 165.779 307.531 158.857 315.943 158.839C324.369 158.825 331.204 165.723 331.211 174.226C331.211 174.226 331.421 247.414 331.441 273.424C331.441 275.936 332.892 281.8 338.549 283.328C375.43 293.267 561.865 285.999 558.967 251.804C543.147 109.96 424.476 0 280.394 0C235.021 0 192.065 10.9162 154.026 30.2754C62.9934 77.5955 -1.65904 173.107 0.0324268 283.43C1.23215 361.622 52.2203 500.605 83.434 521.234C97.8202 530.749 116.765 527.228 201.484 527.228C239.903 527.228 275.679 527.355 293.26 527.436C295.087 527.782 304.671 530.001 304.671 538.907L304.894 641.393C304.915 649.907 298.104 656.826 289.678 656.829C281.266 656.843 274.434 649.953 274.42 641.446C274.42 641.446 275.17 600.322 275.17 584.985C275.17 581.435 275.424 575.339 265.178 570.727C231.432 555.553 121.849 564.712 115.701 581.457C113.347 587.899 125.599 612.801 144.459 644.731C170.102 685.624 211.889 747.245 245.601 792.625C261.047 813.417 268.77 823.813 280.467 824.101C292.165 824.389 300.514 814.236 317.213 793.928C383.012 713.909 516.552 537.663 542.92 388.542Z"
+                     fill="url(#paint0_linear_19447_66107)"></path>
+                       <defs>
+                       <linearGradient id="paint0_linear_19447_66107" x1="445.629" y1="63.8626" x2="160.773" y2="537.598"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF993A"></stop>
+                        <stop offset="1" stop-color="#F15700"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                    </a>
+            </a>
+<!--             
+              Toggler/collapsibe Button -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <!-- Navbar links -->
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active li" style="color: black;" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active li" style="color: black;"  href="#cart">Cart</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active li" style="color: black;"  href="#row2">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div><br><br><br><br><br><br><br><br>
+        <h1>Food Cart</h1>
+    </header>
+
+  <section id="cart">
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: Rs.<span id="cart-total">0</span></p>
+        <button id="checkout-btn" class="mybtn2">Checkout</button>
+    </div>
+    
+    <div class="products" id="orders">
+        <h2>Available Menu</h2>
+        <ul id="product-list">
+           
+          <li data-id="1" data-name=" Veg momos" data-price="250.00" class="justify-content-around">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9fe71aeba657dedca30c976f8b2d07b8">
+            
+             Veg momos <br> Rs. 250.00
+            <button class="add-to-cart" >Add to Cart</button>
+        </li>
+
+
+            <li data-id="2" data-name=" " data-price="399.00" class="justify-content-around">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vrnot4wc1kuia61rcpyu">
+            
+                
+                 appe samber <br> Rs. 399.00
+                <button class="add-to-cart" >Add to Cart</button>
+            </li>
+
+            <li data-id="3" data-name="Fries" data-price="120.00" class="justify-content-around">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/uutsdarbawskburl7tyh">
+        
+            
+                vada pav <br> Rs. 120.00
+                <button class="add-to-cart">Add to Cart</button>
+            </li>
+
+            <li data-id="4" data-name="Cold Drinks" data-price="150.00" class="justify-content-around">
+               <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/39d33d4e3915f361e6184ad6f64ea298">
+            
+                chole puri<br> Rs. 150.00
+                <button class="add-to-cart">Add to Cart</button>
+            </li>
+
+            <li data-id="5" data-name="Cold Coffee" data-price="200.00" class="justify-content-around">
+               <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/04da05f5f218acd43a4d0d8725b278a4">
+                Chicken Masala<br> Rs. 200.00
+                <button class="add-to-cart">Add to Cart</button>
+            </li>
+
+            <!-- Add more products here -->
+            <li data-id="6" data-name="Brownie" data-price="138.00" class="justify-content-around">
+              <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/eq4dawazc2vy6ciyzyr8">
+              
+               Biryani <br> Rs. 138.00
+              <button class="add-to-cart" >Add to Cart</button>
+          </li>
+
+  
+              <li data-id="7" data-name="McFlurry Oreo" data-price="129.00" class="justify-content-around">
+                  <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/3a3529dee7ead945e04d60f388dbcea4">
+                  
+                   Paneer Masala <br> Rs. 129.00
+                  <button class="add-to-cart" >Add to Cart</button>
+              </li>
+  
+              <li data-id="8" data-name="Blueberry Cheese Cake" data-price="229.00" class="justify-content-around">
+                  <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/98afe36f30a1f5463aa9911b56859855" />veg paratha
+                   <br> Rs. 229.00
+                  <button class="add-to-cart">Add to Cart</button>
+              </li>
+  
+              
+              </li>
+        </ul>
+    </div>
+  </section>
+
+   
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      const cartItems = document.getElementById('cart-items');
+      let totalPrice = 0;
+  
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const product = button.parentNode;
+          const productId = product.getAttribute('data-id');
+          const productName = product.getAttribute('data-name');
+          const productPrice = parseFloat(product.getAttribute('data-price'));
+  
+          // Create a new list item for the cart
+          const cartItem = document.createElement('li');
+          cartItem.innerHTML = `${productName} - Rs. ${productPrice.toFixed(2)}`;
+          cartItems.appendChild(cartItem);
+  
+          // Update total price
+          totalPrice += productPrice;
+          document.getElementById('cart-total').textContent = totalPrice.toFixed(2);
+        });
+      });
+  
+      // Adding event listener to the checkout button
+      const checkoutButton = document.getElementById('checkout-btn');
+      checkoutButton.addEventListener('click', function() {
+        if (cartItems.children.length === 0) {
+          alert("Please add items to your cart before checking out.");
+          return; // Exit the function early if cart is empty
+        }
+        alert("Are you sure you want to proceed to checkout?");
+      });
+    });
+  </script>
+  
